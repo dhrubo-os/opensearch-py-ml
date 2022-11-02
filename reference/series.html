@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Series &mdash; Opensearch-py-ml  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/plot_directive.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Series" href="api/Series.html" />
+    <link rel="prev" title="DataFrame.to_pandas" href="api/DataFrame.to_pandas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Opensearch-py-ml
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dataframe.html">DataFrame</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor">Constructor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.html">Series</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes-and-underlying-data">Attributes and Underlying Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.index.html">Series.index</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.dtype.html">Series.dtype</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.dtypes.html">Series.dtypes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.shape.html">Series.shape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.name.html">Series.name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.empty.html">Series.empty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.ndim.html">Series.ndim</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.size.html">Series.size</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#indexing-iteration">Indexing, Iteration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.head.html">Series.head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.tail.html">Series.tail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.sample.html">Series.sample</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#binary-operator-functions">Binary Operator Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.add.html">Series.add</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.sub.html">Series.sub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.subtract.html">Series.subtract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.mul.html">Series.mul</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.multiply.html">Series.multiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.div.html">Series.div</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.divide.html">Series.divide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.truediv.html">Series.truediv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.floordiv.html">Series.floordiv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.mod.html">Series.mod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.pow.html">Series.pow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.radd.html">Series.radd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rsub.html">Series.rsub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rsubtract.html">Series.rsubtract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rmul.html">Series.rmul</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rmultiply.html">Series.rmultiply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rdiv.html">Series.rdiv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rdivide.html">Series.rdivide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rtruediv.html">Series.rtruediv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rfloordiv.html">Series.rfloordiv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rmod.html">Series.rmod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rpow.html">Series.rpow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#computations-descriptive-stats">Computations / Descriptive Stats</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.describe.html">Series.describe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.max.html">Series.max</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.mean.html">Series.mean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.min.html">Series.min</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.sum.html">Series.sum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.median.html">Series.median</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.mad.html">Series.mad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.std.html">Series.std</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.var.html">Series.var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.nunique.html">Series.nunique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.unique.html">Series.unique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.value_counts.html">Series.value_counts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.mode.html">Series.mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.quantile.html">Series.quantile</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reindexing-selection-label-manipulation">Reindexing / Selection / Label Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.rename.html">Series.rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.isna.html">Series.isna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.notna.html">Series.notna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.isnull.html">Series.isnull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.notnull.html">Series.notnull</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.isin.html">Series.isin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.filter.html">Series.filter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#plotting">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.hist.html">Series.hist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#serialization-io-conversion">Serialization / IO / Conversion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.to_string.html">Series.to_string</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.to_numpy.html">Series.to_numpy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.to_pandas.html">Series.to_pandas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#opensearch-functions">Opensearch Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.os_info.html">Series.os_info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.es_match.html">Series.es_match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Series.os_dtype.html">Series.os_dtype</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="general_utility_functions.html">General Utility Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">Input/Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Opensearch-py-ml</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">API Reference</a> &raquo;</li>
+      <li>Series</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/reference/series.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="series">
+<span id="api-series"></span><h1>Series<a class="headerlink" href="#series" title="Permalink to this heading"></a></h1>
+<section id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.html">Series</a></li>
+</ul>
+</div>
+</section>
+<section id="attributes-and-underlying-data">
+<h2>Attributes and Underlying Data<a class="headerlink" href="#attributes-and-underlying-data" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.index.html">Series.index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.dtype.html">Series.dtype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.dtypes.html">Series.dtypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.shape.html">Series.shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.name.html">Series.name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.empty.html">Series.empty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.ndim.html">Series.ndim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.size.html">Series.size</a></li>
+</ul>
+</div>
+</section>
+<section id="indexing-iteration">
+<h2>Indexing, Iteration<a class="headerlink" href="#indexing-iteration" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.head.html">Series.head</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.tail.html">Series.tail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.sample.html">Series.sample</a></li>
+</ul>
+</div>
+</section>
+<section id="binary-operator-functions">
+<h2>Binary Operator Functions<a class="headerlink" href="#binary-operator-functions" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.add.html">Series.add</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.sub.html">Series.sub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.subtract.html">Series.subtract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.mul.html">Series.mul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.multiply.html">Series.multiply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.div.html">Series.div</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.divide.html">Series.divide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.truediv.html">Series.truediv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.floordiv.html">Series.floordiv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.mod.html">Series.mod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.pow.html">Series.pow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.radd.html">Series.radd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rsub.html">Series.rsub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rsubtract.html">Series.rsubtract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rmul.html">Series.rmul</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rmultiply.html">Series.rmultiply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rdiv.html">Series.rdiv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rdivide.html">Series.rdivide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rtruediv.html">Series.rtruediv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rfloordiv.html">Series.rfloordiv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rmod.html">Series.rmod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rpow.html">Series.rpow</a></li>
+</ul>
+</div>
+</section>
+<section id="computations-descriptive-stats">
+<h2>Computations / Descriptive Stats<a class="headerlink" href="#computations-descriptive-stats" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.describe.html">Series.describe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.max.html">Series.max</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.mean.html">Series.mean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.min.html">Series.min</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.sum.html">Series.sum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.median.html">Series.median</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.mad.html">Series.mad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.std.html">Series.std</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.var.html">Series.var</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.nunique.html">Series.nunique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.unique.html">Series.unique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.value_counts.html">Series.value_counts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.mode.html">Series.mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.quantile.html">Series.quantile</a></li>
+</ul>
+</div>
+</section>
+<section id="reindexing-selection-label-manipulation">
+<h2>Reindexing / Selection / Label Manipulation<a class="headerlink" href="#reindexing-selection-label-manipulation" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.rename.html">Series.rename</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.isna.html">Series.isna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.notna.html">Series.notna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.isnull.html">Series.isnull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.notnull.html">Series.notnull</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.isin.html">Series.isin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.filter.html">Series.filter</a></li>
+</ul>
+</div>
+</section>
+<section id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.hist.html">Series.hist</a></li>
+</ul>
+</div>
+</section>
+<section id="serialization-io-conversion">
+<h2>Serialization / IO / Conversion<a class="headerlink" href="#serialization-io-conversion" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.to_string.html">Series.to_string</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.to_numpy.html">Series.to_numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.to_pandas.html">Series.to_pandas</a></li>
+</ul>
+</div>
+</section>
+<section id="opensearch-functions">
+<h2>Opensearch Functions<a class="headerlink" href="#opensearch-functions" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.os_info.html">Series.os_info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.es_match.html">Series.es_match</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Series.os_dtype.html">Series.os_dtype</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/DataFrame.to_pandas.html" class="btn btn-neutral float-left" title="DataFrame.to_pandas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api/Series.html" class="btn btn-neutral float-right" title="Series" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Opensearch.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
