@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -78,10 +79,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../dataframe.html">DataFrame</a> &raquo;</li>
-      <li>DataFrame</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../dataframe.html">DataFrame</a></li>
+      <li class="breadcrumb-item active">DataFrame</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/DataFrame.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -124,11 +125,19 @@
 (rows and columns) referencing data stored in OpenSearch indices.
 Where possible APIs mirror pandas.DataFrame APIs.
 The underlying data is stored in OpenSearch rather than core memory.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <p>os_client: OpenSearch client
 os_index_pattern: str OpenSearch index pattern. This can contain wildcards. (e.g. ‘flights’)
 columns: list of str, optional List of DataFrame columns. A subset of the OpenSearch index’s fields.
 os_index_field: str, optional The OpenSearch index field to use as the DataFrame index. Defaults to _id if None is used.</p>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <p><a href="#id1"><span class="problematic" id="id2">:pandas_api_docs:`pandas.DataFrame`</span></a></p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>Constructing DataFrame from an OpenSearch configuration arguments and an OpenSearch index</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s1">&#39;flights&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -175,6 +184,7 @@ index field
 <span class="go">[5 rows x 2 columns]</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

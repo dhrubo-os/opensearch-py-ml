@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -86,10 +87,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../dataframe.html">DataFrame</a> &raquo;</li>
-      <li>DataFrame.index</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../dataframe.html">DataFrame</a></li>
+      <li class="breadcrumb-item active">DataFrame.index</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/DataFrame.index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -129,12 +130,20 @@
 <dt class="sig sig-object py" id="opensearch_py_ml.DataFrame.index">
 <span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">index</span></span><a class="headerlink" href="#opensearch_py_ml.DataFrame.index" title="Permalink to this definition"></a></dt>
 <dd><p>Return opensearch_py_ml index referencing OpenSearch field to index a DataFrame/Series</p>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>opensearch_py_ml.Index:</dt><dd><p>Note opensearch_py_ml.Index has a very limited API compared to pandas.Index</p>
 </dd>
 </dl>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <p><a href="#id1"><span class="problematic" id="id2">:pandas_api_docs:`pandas.DataFrame.index`</span></a>
 <a href="#id3"><span class="problematic" id="id4">:pandas_api_docs:`pandas.Series.index`</span></a></p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s1">&#39;flights&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ed</span><span class="o">.</span><span class="n">Index</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">os_index_field</span>
@@ -145,6 +154,7 @@
 <span class="go">&#39;_id&#39;</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -86,10 +87,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../dataframe.html">DataFrame</a> &raquo;</li>
-      <li>DataFrame.shape</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../dataframe.html">DataFrame</a></li>
+      <li class="breadcrumb-item active">DataFrame.shape</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/DataFrame.shape.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -129,20 +130,29 @@
 <dt class="sig sig-object py" id="opensearch_py_ml.DataFrame.shape">
 <span class="sig-prename descclassname"><span class="pre">DataFrame.</span></span><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#opensearch_py_ml.DataFrame.shape" title="Permalink to this definition"></a></dt>
 <dd><p>Return a tuple representing the dimensionality of the DataFrame.</p>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
 <p>shape: tuple</p>
 <ol class="arabic simple" start="0">
 <li><p>number of rows</p></li>
 <li><p>number of columns</p></li>
 </ol>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>number of rows <code class="docutils literal notranslate"><span class="pre">len(df)</span></code> queries OpenSearch</p></li>
 <li><p>number of columns <code class="docutils literal notranslate"><span class="pre">len(df.columns)</span></code> is cached. If mappings are updated, DataFrame must be updated.</p></li>
 </ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s1">&#39;ecommerce&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(4675, 45)</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

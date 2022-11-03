@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -81,10 +82,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../dataframe.html">DataFrame</a> &raquo;</li>
-      <li>DataFrame.es_match</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../dataframe.html">DataFrame</a></li>
+      <li class="breadcrumb-item active">DataFrame.es_match</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/DataFrame.es_match.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -130,6 +131,8 @@
 otherwise specific columns can be specified via the <code class="docutils literal notranslate"><span class="pre">columns</span></code> parameter
 or a single column can be filtered on with <a class="reference internal" href="Series.es_match.html#opensearch_py_ml.Series.es_match" title="opensearch_py_ml.Series.es_match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">opensearch_py_ml.Series.es_match()</span></code></a></p>
 <p>All additional keyword arguments are passed in the body of the match query.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>text: str</dt><dd><p>String of text to search for</p>
 </dd>
@@ -153,10 +156,16 @@ Set to False to ignore this preventative check.</p>
 <dt>fuzziness: int, str, optional</dt><dd><p>Specify the fuzziness option for the match query</p>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>DataFrame</dt><dd><p>A filtered <a class="reference internal" href="DataFrame.html#opensearch_py_ml.DataFrame" title="opensearch_py_ml.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">opensearch_py_ml.DataFrame</span></code></a> with the given match query</p>
 </dd>
 </dl>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s2">&quot;ecommerce&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">es_match</span><span class="p">(</span><span class="s2">&quot;Men&#39;s&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">])</span>
 <span class="go">                                              category currency  ...   type     user</span>
@@ -175,6 +184,7 @@ Set to False to ignore this preventative check.</p>
 <span class="go">[2310 rows x 45 columns]</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

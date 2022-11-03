@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -91,10 +92,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../series.html">Series</a> &raquo;</li>
-      <li>Series.value_counts</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../series.html">Series</a></li>
+      <li class="breadcrumb-item active">Series.value_counts</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/Series.value_counts.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -137,18 +138,29 @@
 <p><strong>Note we can only do this for aggregatable OpenSearch fields - (in general) numeric and keyword
 rather than text fields</strong></p>
 <p>TODO - implement remainder of pandas arguments</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>es_size: int, default 10</dt><dd><p>Number of buckets to return counts for, automatically sorts by count descending.
 This parameter is specific to <cite>opensearch_py_ml</cite>, and determines how many term buckets
 OpenSearch should return out of the overall terms list.</p>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>pandas.Series</dt><dd><p>number of occurrences of each value in the column</p>
 </dd>
 </dl>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <p><a href="#id1"><span class="problematic" id="id2">:pandas_api_docs:`pandas.Series.value_counts`</span></a>
 <a href="#id3"><span class="problematic" id="id4">:es_api_docs:`search-aggregations-bucket-terms-aggregation`</span></a></p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s1">&#39;flights&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Carrier&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="go">Logstash Airways    3331</span>
@@ -158,6 +170,7 @@ OpenSearch should return out of the overall terms list.</p>
 <span class="go">Name: Carrier, dtype: int64</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

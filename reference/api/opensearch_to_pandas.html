@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -71,10 +72,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../general_utility_functions.html">General Utility Functions</a> &raquo;</li>
-      <li>opensearch_to_pandas</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../general_utility_functions.html">General Utility Functions</a></li>
+      <li class="breadcrumb-item active">opensearch_to_pandas</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/opensearch_to_pandas.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -116,16 +117,24 @@
 <dd><p>Convert an opensearch_py_ml.Dataframe to a pandas.DataFrame</p>
 <p><strong>Note: this loads the entire OpenSearch index into in core pandas.DataFrame structures. For large
 indices this can create significant load on the OpenSearch cluster and require signficant memory</strong></p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>ed_df: opensearch_py_ml.DataFrame</dt><dd><p>The source opensearch_py_ml.Dataframe referencing the OpenSearch index</p>
 </dd>
 <dt>show_progress: bool</dt><dd><p>Output progress of option to stdout? By default False.</p>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>pandas.Dataframe</dt><dd><p>pandas.DataFrame contains all rows and columns in opensearch_py_ml.DataFrame</p>
 </dd>
 </dl>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ed_df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s1">&#39;flights&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">ed_df</span><span class="p">)</span>
 <span class="go">&lt;class &#39;opensearch_py_ml.dataframe.DataFrame&#39;&gt;</span>
@@ -161,7 +170,11 @@ indices this can create significant load on the OpenSearch cluster and require s
 <span class="go">2020-01-29 12:43:37.309031: read 13059 rows</span>
 </pre></div>
 </div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <p>opensearch_py_ml.pandas_to_opensearch: Create an opensearch_py_ml.Dataframe from pandas.DataFrame</p>
+</section>
 </dd></dl>
 
 </section>

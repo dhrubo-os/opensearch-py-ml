@@ -17,6 +17,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -94,10 +95,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../dataframe.html">DataFrame</a> &raquo;</li>
-      <li>groupby.DataFrameGroupBy.var</li>
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../dataframe.html">DataFrame</a></li>
+      <li class="breadcrumb-item active">groupby.DataFrameGroupBy.var</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/reference/api/groupby.DataFrameGroupBy.var.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -137,6 +138,8 @@
 <dt class="sig sig-object py" id="opensearch_py_ml.groupby.DataFrameGroupBy.var">
 <span class="sig-prename descclassname"><span class="pre">DataFrameGroupBy.</span></span><span class="sig-name descname"><span class="pre">var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numeric_only</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pd.DataFrame</span></span></span><a class="reference internal" href="../../_modules/opensearch_py_ml/groupby.html#DataFrameGroupBy.var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#opensearch_py_ml.groupby.DataFrameGroupBy.var" title="Permalink to this definition"></a></dt>
 <dd><p>Compute the variance value for each group.</p>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>numeric_only: {True, False, None} Default is True</dt><dd><p>Which datatype to be returned
 - True: Returns all values as float64, NaN/NaT values are removed
@@ -144,11 +147,20 @@
 - False: Returns all values as the same dtype where possible, NaN/NaT are preserved</p>
 </dd>
 </dl>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
 <dl class="simple">
 <dt>pandas.DataFrame</dt><dd><p>variance value for each numeric column of each group</p>
 </dd>
 </dl>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <p><a href="#id1"><span class="problematic" id="id2">:pandas_api_docs:`pandas.core.groupby.GroupBy.var`</span></a></p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
 <span class="gp">... </span>  <span class="n">OPENSEARCH_TEST_CLIENT</span><span class="p">,</span> <span class="s2">&quot;flights&quot;</span><span class="p">,</span>
 <span class="gp">... </span>  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AvgTicketPrice&quot;</span><span class="p">,</span> <span class="s2">&quot;Cancelled&quot;</span><span class="p">,</span> <span class="s2">&quot;dayOfWeek&quot;</span><span class="p">,</span> <span class="s2">&quot;timestamp&quot;</span><span class="p">,</span> <span class="s2">&quot;DestCountry&quot;</span><span class="p">]</span>
@@ -171,6 +183,7 @@
 <span class="go">[32 rows x 3 columns]</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>
