@@ -485,22 +485,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">opensearch_py_ml.ml_commons</span> <span class="kn">import</span> <span class="n">MLCommonClient</span>
 <span class="kn">from</span> <span class="nn">opensearchpy</span> <span class="kn">import</span> <span class="n">OpenSearch</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import mlcommon to later upload the model to OpenSearch Cluster</span>
-<span class="kn">from</span> <span class="nn">opensearch_py_ml.ml_commons</span> <span class="kn">import</span> <span class="n">MLCommonClient</span>
 </pre></div>
 </div>
 </div>
@@ -552,8 +542,30 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;/Volumes/workplace/upload_content/all-MiniLM-L6-v2_torchscript_sentence-transformer.zip&#39;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#connect to ml_common client with OpenSearch client</span>
+<span class="kn">from</span> <span class="nn">opensearch_py_ml.ml_commons</span> <span class="kn">import</span> <span class="n">MLCommonClient</span>
+<span class="n">ml_client</span> <span class="o">=</span> <span class="n">MLCommonClient</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;/Volumes/workplace/upload_content/all-MiniLM-L6-v2_torchscript_sentence-transformer.zip&#39;</span>
 <span class="n">model_config_path</span> <span class="o">=</span> <span class="s1">&#39;/Volumes/workplace/upload_content/all-MiniLM-L6-v2_torchscript.json&#39;</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">all-MiniLM-L6-v2_torchscript.json content:</span>
+
+<span class="sd">{</span>
+<span class="sd">    &quot;name&quot;: &quot;all-MiniLM-L6-v2&quot;,</span>
+<span class="sd">    &quot;version&quot;: 1,</span>
+<span class="sd">    &quot;model_format&quot;: &quot;TORCH_SCRIPT&quot;,</span>
+<span class="sd">    &quot;model_config&quot;: {</span>
+<span class="sd">        &quot;model_type&quot;: &quot;bert&quot;,</span>
+<span class="sd">        &quot;embedding_dimension&quot;: 384,</span>
+<span class="sd">        &quot;framework_type&quot;: &quot;sentence_transformers&quot;</span>
+<span class="sd">    }</span>
+<span class="sd">}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
 <span class="n">ml_client</span><span class="o">.</span><span class="n">upload_model</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">model_config_path</span><span class="p">,</span> <span class="n">isVerbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
