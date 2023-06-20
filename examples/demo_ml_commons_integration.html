@@ -206,7 +206,7 @@ Installing collected packages: deprecated
 <p>From Opensearch 2.8, to register a model we need to have a model group. First we need to register a model group and use the model group id to register a model. For registering a model group we can look at this doc:</p>
 <p><a class="reference external" href="https://github.com/opensearch-project/ml-commons/blob/2.x/docs/model_access_control.md#registering-a-model-group">https://github.com/opensearch-project/ml-commons/blob/2.x/docs/model_access_control.md#registering-a-model-group</a></p>
 <p>In our following example, we created a group and using the group id to register a model.</p>
-<p>From Opensearch 2.7, we introduced pre-trained models: <a class="reference external" href="https://opensearch.org/docs/latest/ml-commons-plugin/pretrained-models/">https://opensearch.org/docs/latest/ml-commons-plugin/pretrained-models/</a></p>
+<p>From Opensearch 2.6, we introduced pre-trained models: <a class="reference external" href="https://opensearch.org/docs/latest/ml-commons-plugin/pretrained-models/">https://opensearch.org/docs/latest/ml-commons-plugin/pretrained-models/</a></p>
 <ul class="simple">
 <li><p>One thing to remember, if we don’t have any ml node then registering model might throw exception. In that case we need to update this setting: <a class="reference external" href="https://github.com/opensearch-project/ml-commons/blob/main/build.gradle#L46">https://github.com/opensearch-project/ml-commons/blob/main/build.gradle#L46</a></p></li>
 </ul>
@@ -235,7 +235,7 @@ Installing collected packages: deprecated
 Model was registered successfully. Model Id:  7aF5sYgBZqn0fcHifav4
 </pre></div></div>
 </div>
-<p>We can also upload model from our own file system or URL. But to do that we need to update couple cluster settins:</p>
+<p>We can also upload model from our own file system or URL. But to do that we need to update couple cluster settings:</p>
 <p>To register from url: plugins.ml_commons.allow_registering_model_via_url To register from file system: plugins.ml_commons.allow_registering_model_via_local_file</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>By default, both of these values are `False`, we need to update to `True`
 </pre></div>
